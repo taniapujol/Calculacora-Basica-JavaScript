@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculadora</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Diplomata+SC" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="titulo">
+    <h1>Calculadora</h1>
+    <h3>Básica en JavaScript</h3>
+    <a id="abrir">
+      <i class="fa fa-calculator" aria-hidden="true"></i>
+    </a>
+  </div>
+  <div class="ventana">
+    <form id="calculadora">
+      <a id="cerrar">
+        <i class="fa fa-times-circle" aria-hidden="true"></i>
+      </a>
+      <table>
+        <!--Introducimos el compo de display -->
+        <tr>
+          <td colspan="5"><input type="text" name="display" id="display"
+            placeholden="0" onkeypress="return numeros(event)"></td>
+        </tr>
+        <!-- Introducimos los campos de los numeros y las operaciones -->
+        <tr>
+          <td><input type="button" name="7" value="7"></td>
+          <td><input type="button" name="8" value="8"></td>
+          <td><input type="button" name="9" value="9"></td>
+          <td><input type="button" name="suma" value="+"></td>
+          <td><input type="button" name="borrar" value="C"></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="4" value="4"></td>
+          <td><input type="button" name="5" value="5"></td>
+          <td><input type="button" name="6" value="6"></td>
+          <td><input type="button" name="resta" value="-"></td>
+          <td><input type="button" name="borrar1" value="CE"></td>
+        </tr>
+        <tr>
+          <td><input type="button" name="1" value="1"></td>
+          <td><input type="button" name="2" value="2"></td>
+          <td><input type="button" name="3" value="3"></td>
+          <td><input type="button" name="por" value="&times"></td>
+          <td rowspan="2"><input type="button" name="resultado" value="="></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="button" name="cero" value="0"></td>
+          <td><input type="button" name="punto" value="."></td>
+          <td><input type="button" name="divide" value="/"></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/calculadora.js"></script>
+  </body>
+</html>

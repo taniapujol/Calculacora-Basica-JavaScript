@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  @import url("https://fonts.googleapis.com/css?family=Diplomata+SC"); }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 0;
+  overflow: hidden; }
+  body .titulo {
+    margin: 50px 100px 0 300px; }
+    body .titulo h1, body .titulo h3 {
+      font-size: 42px;
+      font-family: 'Diplomata SC', cursive;
+      margin: 0 auto;
+      width: 100%;
+      color: #000;
+      text-align: right;
+      text-shadow: 2px 2px #fff; }
+    body .titulo h3 {
+      font-size: 24px; }
+    body .titulo a {
+      text-decoration: none; }
+      body .titulo a i {
+        font-size: 80px;
+        transition: font-size 1s; }
+        body .titulo a i:hover {
+          color: #fff;
+          font-size: 100px; }
+
+.ventana {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.6);
+  top: 0;
+  left: 0;
+  display: none; }
+  .ventana form {
+    width: 315px;
+    height: auto;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -175px auto;
+    border: 1px solid grey;
+    box-shadow: 4px 4px 4px grey;
+    padding-bottom: 20px; }
+    .ventana form a {
+      text-decoration: none; }
+      .ventana form a i {
+        font-size: 50px;
+        color: #000;
+        float: right; }
+        .ventana form a i:hover {
+          color: grey;
+          cursor: pointer; }
+    .ventana form input[type=text] {
+      width: 95%;
+      height: 48px;
+      font-size: 30px;
+      background-color: #7b20a2;
+      border: 2px solid #8a99d6;
+      color: #fff;
+      margin-bottom: 10px;
+      padding: 6px;
+      text-align: right; }
+    .ventana form input[name="1"] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name="1"]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name="2"] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name="2"]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name="3"] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name="3"]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name="4"] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name="4"]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name="5"] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name="5"]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name="6"] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name="6"]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name="7"] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name="7"]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name="8"] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name="8"]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name="9"] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name="9"]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name=suma] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name=suma]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name=divide] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name=divide]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name=resta] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name=resta]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name=por] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name=por]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name=borrar1] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name=borrar1]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name=borrar] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name=borrar]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name=punto] {
+      width: 56px;
+      height: 56px;
+      background-color: #8a55d3;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff; }
+      .ventana form input[name=punto]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name=cero] {
+      width: 98%;
+      height: 56px;
+      background-color: #8a55d3;
+      color: #fff;
+      font-size: 30px;
+      font-weight: bold; }
+      .ventana form input[name=cero]:hover {
+        background-color: #8a99d6; }
+    .ventana form input[name=resultado] {
+      width: 56px;
+      height: 112px;
+      background-color: #8a55d3;
+      color: #fff;
+      font-size: 30px;
+      font-weight: bold; }
+      .ventana form input[name=resultado]:hover {
+        background-color: #8a99d6; }
+    .ventana form table {
+      width: 97%;
+      height: 97%;
+      margin: 0px auto;
+      border: 1px solid grey; }
+
+/*# sourceMappingURL=styles.css.map */

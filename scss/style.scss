@@ -1,0 +1,157 @@
+// Creando variables
+$cien : 100%;
+$blanco: #fff;
+$negro: #000;
+$colhover: #8a99d6;
+$color:#8a55d3;
+$fondo : url('../img/fondo.jpg');
+// Creando mixin
+@mixin wxh ($ancho,$alto){
+  width: $ancho;
+  height: $alto;
+}
+@mixin resturar {
+  margin: 0;
+  padding: 0;
+}
+@mixin hover ($color) {
+  &:hover {
+    background-color: $color;
+  }
+}
+// Creando el estilos scss de la página
+*{
+  @include resturar;
+  @import url('https://fonts.googleapis.com/css?family=Diplomata+SC');
+}
+body{
+  @include resturar;
+  background:{
+    image:$fondo;
+    repeat: no-repeat;
+    size: cover;
+    position: center 0;
+  }
+  overflow: hidden;
+  .titulo{
+    margin: 50px 100px 0 300px;
+    h1, h3{
+      font:{
+        size: 42px;
+        family: 'Diplomata SC', cursive;
+      }
+      margin: 0 auto;
+      width: $cien;
+      color: $negro;
+      text:{
+        align: right;
+        shadow: 2px 2px $blanco;
+      }
+    }
+    h3 {
+      font-size: 24px;
+    }
+    a{
+      text-decoration: none;
+      i{
+        font-size: 80px;
+        transition: font-size 1s;
+        &:hover{
+          color: $blanco;
+          font-size: 100px;
+        }
+      }
+    }
+  }
+}
+.ventana{
+  @include wxh($cien,$cien);
+  position: fixed;
+  color: $negro;
+  background-color: rgba(255, 255, 255,.6);
+  top: 0;
+  left:0;
+  display: none;
+  form{
+    a{
+      text-decoration: none;
+      i{
+        font-size: 50px;
+        color: $negro;
+        float: right;
+        &:hover{
+          color:grey;
+          cursor: pointer;
+        }
+      }
+    }
+    @include wxh(315px,auto);
+    background-color:$blanco;
+    position: absolute;
+    top: $cien / 2;
+    left: $cien / 2;
+    margin: -175px auto;
+    border: 1px solid grey;
+    box-shadow: 4px 4px 4px grey;
+    padding-bottom:20px;
+    input[type=text]{
+      @include wxh(95%,48px);
+      font-size: 30px;
+      background-color: rgb(123,32,162);
+      border:2px solid $colhover;
+      color: $blanco;
+      margin-bottom: 10px;
+      padding: 6px;
+      text-align: right;
+    }
+    @for $i from 1 through 9 {
+      input[name="#{$i}"] {
+        @include wxh(56px,56px);
+        background-color: #8a55d3;
+        font:{
+          size:20px;
+          weight: bold;
+        }
+        color:$blanco;
+        @include hover($colhover);
+      }
+    }
+    @each $name in suma, divide, resta, por, borrar1, borrar, punto {
+      input[name=#{$name}]{
+        @include wxh(56px,56px);
+        background-color: $color;
+        font:{
+          size:20px;
+          weight: bold;
+        }
+        color:$blanco;
+        @include hover($colhover);
+      }
+    }
+    input[name=cero]{
+      @include wxh(98%,56px);
+      background-color:$color;
+      color:$blanco;
+      font:{
+        size:30px;
+        weight: bold;
+      }
+      @include hover($colhover);
+    }
+    input[name=resultado]{
+      @include wxh(56px,56px*2);
+      background-color:$color;
+      color:$blanco;
+      font:{
+        size:30px;
+        weight: bold;
+      }
+      @include hover($colhover);
+    }
+    table{
+      @include wxh(97%,97%);
+      margin: 0px auto;
+      border: 1px solid grey;
+      }
+  }
+}
