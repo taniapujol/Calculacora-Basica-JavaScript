@@ -18,45 +18,38 @@
     </a>
   </div>
   <div class="ventana">
-    <form id="calculadora">
+    <div id="calculadora">
       <a id="cerrar">
         <i class="fa fa-times-circle" aria-hidden="true"></i>
       </a>
-      <table>
-        <!--Introducimos el compo de display -->
-        <tr>
-          <td colspan="5"><input type="text" name="display" id="display"
-            placeholden="0" onkeypress="return numeros(event)"></td>
-        </tr>
+      <div class="container">
+        <!--Introducimos el campo de display -->
+        <header class="top">
+          <input type="text" name="display" id="display">
+        </header>
         <!-- Introducimos los campos de los numeros y las operaciones -->
-        <tr>
-          <td><input type="button" name="7" value="7"></td>
-          <td><input type="button" name="8" value="8"></td>
-          <td><input type="button" name="9" value="9"></td>
-          <td><input type="button" name="suma" value="+"></td>
-          <td><input type="button" name="borrar" value="C"></td>
-        </tr>
-        <tr>
-          <td><input type="button" name="4" value="4"></td>
-          <td><input type="button" name="5" value="5"></td>
-          <td><input type="button" name="6" value="6"></td>
-          <td><input type="button" name="resta" value="-"></td>
-          <td><input type="button" name="borrar1" value="CE"></td>
-        </tr>
-        <tr>
-          <td><input type="button" name="1" value="1"></td>
-          <td><input type="button" name="2" value="2"></td>
-          <td><input type="button" name="3" value="3"></td>
-          <td><input type="button" name="por" value="&times"></td>
-          <td rowspan="2"><input type="button" name="resultado" value="="></td>
-        </tr>
-        <tr>
-          <td colspan="2"><input type="button" name="cero" value="0"></td>
-          <td><input type="button" name="punto" value="."></td>
-          <td><input type="button" name="divide" value="/"></td>
-        </tr>
-      </table>
-    </form>
+        <seccion class="body">
+          <input type="button" name="btn" value="7">
+          <input type="button" name="btn" value="8">
+          <input type="button" name="btn" value="9">
+          <input type="button" name="suma" value="+">
+          <input type="button" name="borrar1" value="C">
+          <input type="button" name="btn" value="4">
+          <input type="button" name="btn" value="5">
+          <input type="button" name="btn" value="6">
+          <input type="button" name="resta" value="-">
+          <input type="button" name="borrar" value="CE">
+          <input type="button" name="btn" value="1">
+          <input type="button" name="btn" value="2">
+          <input type="button" name="btn" value="3">
+          <input type="button" name="por" value="&times">
+          <input type="button" name="igual" value="=">
+          <input type="button" name="zero" value="0">
+          <input type="button" name="btn" value=".">
+          <input type="button" name="divide" value="/">
+        </seccion>
+      </div>
+    </div>
   </div>
   <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="js/calculadora.js"></script>

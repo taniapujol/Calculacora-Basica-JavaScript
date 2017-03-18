@@ -2,8 +2,8 @@
 $cien : 100%;
 $blanco: #fff;
 $negro: #000;
-$colhover: #8a99d6;
-$color:#8a55d3;
+$color: #8a55d3;
+$colhover:#8a99d6;
 $fondo : url('../img/fondo.jpg');
 // Creando mixin
 @mixin wxh ($ancho,$alto){
@@ -14,15 +14,16 @@ $fondo : url('../img/fondo.jpg');
   margin: 0;
   padding: 0;
 }
-@mixin hover ($color) {
+@mixin hover ($colhover) {
   &:hover {
-    background-color: $color;
+    background-color: $colhover;
   }
 }
 // Creando el estilos scss de la página
 *{
   @include resturar;
   @import url('https://fonts.googleapis.com/css?family=Diplomata+SC');
+  box-sizing: border-box;
 }
 body{
   @include resturar;
@@ -59,6 +60,7 @@ body{
         &:hover{
           color: $blanco;
           font-size: 100px;
+          cursor: pointer;
         }
       }
     }
@@ -71,13 +73,13 @@ body{
   background-color: rgba(255, 255, 255,.6);
   top: 0;
   left:0;
-  display: none;
-  form{
+  // display: none;
+  #calculadora {
     a{
       text-decoration: none;
       i{
         font-size: 50px;
-        color: $negro;
+        color: $blanco;
         float: right;
         &:hover{
           color:grey;
@@ -86,72 +88,52 @@ body{
       }
     }
     @include wxh(315px,auto);
-    background-color:$blanco;
-    position: absolute;
-    top: $cien / 2;
-    left: $cien / 2;
-    margin: -175px auto;
-    border: 1px solid grey;
+    background-color:$negro;
+    position: relative;
+    margin: 200px auto;
+    border: 2px solid grey;
     box-shadow: 4px 4px 4px grey;
-    padding-bottom:20px;
-    input[type=text]{
-      @include wxh(95%,48px);
-      font-size: 30px;
-      background-color: rgb(123,32,162);
-      border:2px solid $colhover;
-      color: $blanco;
-      margin-bottom: 10px;
-      padding: 6px;
-      text-align: right;
-    }
-    @for $i from 1 through 9 {
-      input[name="#{$i}"] {
-        @include wxh(56px,56px);
-        background-color: #8a55d3;
-        font:{
-          size:20px;
-          weight: bold;
+    padding: 10px;
+    .container{
+      @include wxh($cien,$cien);
+      position: relative;
+      .top{
+        @include wxh($cien,48px);
+        padding: 6px;
+        background: $colhover;
+        margin-top: 50px;
+        #display{
+          @include wxh($cien,$cien);
+          border:none;
+          opacity: 0.5;
+          color:#800080;
+          font-size: 20px;
+          text-align: right;
         }
-        color:$blanco;
-        @include hover($colhover);
       }
-    }
-    @each $name in suma, divide, resta, por, borrar1, borrar, punto {
-      input[name=#{$name}]{
-        @include wxh(56px,56px);
-        background-color: $color;
-        font:{
-          size:20px;
-          weight: bold;
+      .body{
+        margin-top: 10px;
+        @include wxh(315px,auto);
+        padding: 9px;
+        background-color: $blanco;
+        input[type="button"]{
+          @include wxh(56px,50px);
+          background-color:$color;
+          color: #800080;
+          margin-top: 4px;
+          font:{
+            weight: bold;
+            size: 20px;
+            family: sans-serif;
+          }
         }
-        color:$blanco;
-        @include hover($colhover);
+        input[name="igual"]{
+          @include wxh(56px,100px);
+        }
+        input[name="zero"]{
+          @include wxh(112px,50px);
+        }
       }
     }
-    input[name=cero]{
-      @include wxh(98%,56px);
-      background-color:$color;
-      color:$blanco;
-      font:{
-        size:30px;
-        weight: bold;
-      }
-      @include hover($colhover);
-    }
-    input[name=resultado]{
-      @include wxh(56px,56px*2);
-      background-color:$color;
-      color:$blanco;
-      font:{
-        size:30px;
-        weight: bold;
-      }
-      @include hover($colhover);
-    }
-    table{
-      @include wxh(97%,97%);
-      margin: 0px auto;
-      border: 1px solid grey;
-      }
   }
 }
