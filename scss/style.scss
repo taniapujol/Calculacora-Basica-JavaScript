@@ -20,20 +20,12 @@ $fondo : url('../img/fondo.jpg');
   }
 }
 // Creando el estilos scss de la página
+@import url('https://fonts.googleapis.com/css?family=Diplomata+SC');
 *{
   @include resturar;
-  @import url('https://fonts.googleapis.com/css?family=Diplomata+SC');
-  box-sizing: border-box;
 }
 body{
-  @include resturar;
-  background:{
-    image:$fondo;
-    repeat: no-repeat;
-    size: cover;
-    position: center 0;
-  }
-  overflow: hidden;
+  background-color: rgb(150, 139, 147);
   .titulo{
     margin: 50px 100px 0 300px;
     h1, h3{
@@ -52,88 +44,52 @@ body{
     h3 {
       font-size: 24px;
     }
-    a{
-      text-decoration: none;
-      i{
-        font-size: 80px;
-        transition: font-size 1s;
-        &:hover{
-          color: $blanco;
-          font-size: 100px;
-          cursor: pointer;
-        }
-      }
-    }
   }
 }
-.ventana{
-  @include wxh($cien,$cien);
-  position: fixed;
-  color: $negro;
-  background-color: rgba(255, 255, 255,.6);
-  top: 0;
-  left:0;
-  // display: none;
-  #calculadora {
-    a{
-      text-decoration: none;
-      i{
-        font-size: 50px;
-        color: $blanco;
-        float: right;
-        &:hover{
-          color:grey;
-          cursor: pointer;
-        }
-      }
-    }
+.calculadora {
     @include wxh(315px,auto);
     background-color:$negro;
     position: relative;
-    margin: 200px auto;
+    margin: 50px auto;
     border: 2px solid grey;
     box-shadow: 4px 4px 4px grey;
     padding: 10px;
-    .container{
-      @include wxh($cien,$cien);
+    .top{
+      @include wxh(97%,48px);
       position: relative;
-      .top{
-        @include wxh($cien,48px);
-        padding: 6px;
-        background: $colhover;
-        margin-top: 50px;
-        #display{
-          @include wxh($cien,$cien);
-          border:none;
-          opacity: 0.5;
-          color:#800080;
-          font-size: 20px;
-          text-align: right;
-        }
-      }
-      .body{
-        margin-top: 10px;
-        @include wxh(315px,auto);
-        padding: 9px;
-        background-color: $blanco;
-        input[type="button"]{
-          @include wxh(56px,50px);
-          background-color:$color;
-          color: #800080;
-          margin-top: 4px;
-          font:{
-            weight: bold;
-            size: 20px;
-            family: sans-serif;
-          }
-        }
-        input[name="igual"]{
-          @include wxh(56px,100px);
-        }
-        input[name="zero"]{
-          @include wxh(112px,50px);
-        }
+      padding: 6px;
+      background: $colhover;
+      margin-top: 50px;
+      #display{
+        @include wxh($cien,$cien);
+        border:none;
+        opacity: 0.5;
+        color:#800080;
+        font-size: 20px;
+        text-align: right;
       }
     }
-  }
+    .cuerpo{
+      position: relative;
+      margin-top: 5px;
+      margin: auto;
+      @include wxh($cien,auto);
+      padding: 9px;
+      .btn {
+        @include wxh(56px,50px);
+        background-color:$color;
+        color: #800080;
+        font:{
+          size: 20px;
+          family: sans-serif;
+        }
+      }
+      .igual {
+        width: 56px;
+        height: 100px;
+      }
+      .zero {
+        @include wxh(112px,50px);
+      }
+    }
 }

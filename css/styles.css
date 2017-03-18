@@ -1,17 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Diplomata+SC");
 * {
   margin: 0;
-  padding: 0;
-  @import url("https://fonts.googleapis.com/css?family=Diplomata+SC");
-  box-sizing: border-box; }
+  padding: 0; }
 
 body {
-  margin: 0;
-  padding: 0;
-  background-image: url("../img/fondo.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center 0;
-  overflow: hidden; }
+  background-color: #968b93; }
   body .titulo {
     margin: 50px 100px 0 300px; }
     body .titulo h1, body .titulo h3 {
@@ -24,80 +17,50 @@ body {
       text-shadow: 2px 2px #fff; }
     body .titulo h3 {
       font-size: 24px; }
-    body .titulo a {
-      text-decoration: none; }
-      body .titulo a i {
-        font-size: 80px;
-        transition: font-size 1s; }
-        body .titulo a i:hover {
-          color: #fff;
-          font-size: 100px;
-          cursor: pointer; }
 
-.ventana {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  color: #000;
-  background-color: rgba(255, 255, 255, 0.6);
-  top: 0;
-  left: 0; }
-  .ventana #calculadora {
-    width: 315px;
-    height: auto;
-    background-color: #000;
+.calculadora {
+  width: 315px;
+  height: auto;
+  background-color: #000;
+  position: relative;
+  margin: 50px auto;
+  border: 2px solid grey;
+  box-shadow: 4px 4px 4px grey;
+  padding: 10px; }
+  .calculadora .top {
+    width: 97%;
+    height: 48px;
     position: relative;
-    margin: 200px auto;
-    border: 2px solid grey;
-    box-shadow: 4px 4px 4px grey;
-    padding: 10px; }
-    .ventana #calculadora a {
-      text-decoration: none; }
-      .ventana #calculadora a i {
-        font-size: 50px;
-        color: #fff;
-        float: right; }
-        .ventana #calculadora a i:hover {
-          color: grey;
-          cursor: pointer; }
-    .ventana #calculadora .container {
+    padding: 6px;
+    background: #8a99d6;
+    margin-top: 50px; }
+    .calculadora .top #display {
       width: 100%;
       height: 100%;
-      position: relative; }
-      .ventana #calculadora .container .top {
-        width: 100%;
-        height: 48px;
-        padding: 6px;
-        background: #8a99d6;
-        margin-top: 50px; }
-        .ventana #calculadora .container .top #display {
-          width: 100%;
-          height: 100%;
-          border: none;
-          opacity: 0.5;
-          color: #800080;
-          font-size: 20px;
-          text-align: right; }
-      .ventana #calculadora .container .body {
-        margin-top: 10px;
-        width: 315px;
-        height: auto;
-        padding: 9px;
-        background-color: #fff; }
-        .ventana #calculadora .container .body input[type="button"] {
-          width: 56px;
-          height: 50px;
-          background-color: #8a55d3;
-          color: #800080;
-          margin-top: 4px;
-          font-weight: bold;
-          font-size: 20px;
-          font-family: sans-serif; }
-        .ventana #calculadora .container .body input[name="igual"] {
-          width: 56px;
-          height: 100px; }
-        .ventana #calculadora .container .body input[name="zero"] {
-          width: 112px;
-          height: 50px; }
+      border: none;
+      opacity: 0.5;
+      color: #800080;
+      font-size: 20px;
+      text-align: right; }
+  .calculadora .cuerpo {
+    position: relative;
+    margin-top: 5px;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    padding: 9px; }
+    .calculadora .cuerpo .btn {
+      width: 56px;
+      height: 50px;
+      background-color: #8a55d3;
+      color: #800080;
+      font-size: 20px;
+      font-family: sans-serif; }
+    .calculadora .cuerpo .igual {
+      width: 56px;
+      height: 100px; }
+    .calculadora .cuerpo .zero {
+      width: 112px;
+      height: 50px; }
 
 /*# sourceMappingURL=styles.css.map */

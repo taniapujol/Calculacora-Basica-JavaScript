@@ -13,44 +13,35 @@
   <div class="titulo">
     <h1>Calculadora</h1>
     <h3>Básica en JavaScript</h3>
-    <a id="abrir">
-      <i class="fa fa-calculator" aria-hidden="true"></i>
-    </a>
   </div>
-  <div class="ventana">
-    <div id="calculadora">
-      <a id="cerrar">
-        <i class="fa fa-times-circle" aria-hidden="true"></i>
-      </a>
-      <div class="container">
-        <!--Introducimos el campo de display -->
-        <header class="top">
-          <input type="text" name="display" id="display">
-        </header>
-        <!-- Introducimos los campos de los numeros y las operaciones -->
-        <seccion class="body">
-          <input type="button" name="btn" value="7">
-          <input type="button" name="btn" value="8">
-          <input type="button" name="btn" value="9">
-          <input type="button" name="suma" value="+">
-          <input type="button" name="borrar1" value="C">
-          <input type="button" name="btn" value="4">
-          <input type="button" name="btn" value="5">
-          <input type="button" name="btn" value="6">
-          <input type="button" name="resta" value="-">
-          <input type="button" name="borrar" value="CE">
-          <input type="button" name="btn" value="1">
-          <input type="button" name="btn" value="2">
-          <input type="button" name="btn" value="3">
-          <input type="button" name="por" value="&times">
-          <input type="button" name="igual" value="=">
-          <input type="button" name="zero" value="0">
-          <input type="button" name="btn" value=".">
-          <input type="button" name="divide" value="/">
-        </seccion>
-      </div>
+  <div class="calculadora">
+    <!--Introducimos el campo de display -->
+    <header class="top">
+      <input type="text" name="display" id="display">
+    </header>
+    <!-- Introducimos los campos de los numeros y las operaciones -->
+    <div class="cuerpo">
+      <input type="button" name="btn" value="7" class="btn">
+      <input type="button" name="btn" value="8" class="btn">
+      <input type="button" name="btn" value="9" class="btn">
+      <input type="button" name="suma" value="+" class="btn">
+      <input type="button" name="borrar1" value="C" class="btn">
+      <input type="button" name="btn" value="4" class="btn">
+      <input type="button" name="btn" value="5" class="btn">
+      <input type="button" name="btn" value="6" class="btn">
+      <input type="button" name="resta" value="-" class="btn">
+      <input type="button" name="borrar" value="CE" class="btn">
+      <input type="button" name="btn" value="1" class="btn">
+      <input type="button" name="btn" value="2" class="btn">
+      <input type="button" name="btn" value="3" class="btn">
+      <input type="button" name="por" value="&times" class="btn">
+      <input type="button" name="igual" value="" class="btn igual">
+      <input type="button" name="zero" value="0" class="btn zero">
+      <input type="button" name="btn" value="." class="btn">
+      <input type="button" name="divide" value="/" class="btn">
     </div>
   </div>
+  <!-- Cargando jquery-3 y calculadora.js  -->
   <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="js/calculadora.js"></script>
   </body>
