@@ -17,28 +17,41 @@
   <div class="calculadora">
     <!--Introducimos el campo de display -->
     <header class="top">
-      <input type="text" name="display" id="display">
+      <label class="op"></label>
+      <input type="text" name="display" id="display" placeholder="0">
     </header>
     <!-- Introducimos los campos de los numeros y las operaciones -->
+    <div id="opIcono">
+      <input type="button" name="op" class="btn" value="&#8596">
+      <p class="tooltip">Mas Operaciones</p>
+    </div>
     <div class="cuerpo">
       <input type="button" name="btn" value="7" class="btn">
       <input type="button" name="btn" value="8" class="btn">
       <input type="button" name="btn" value="9" class="btn">
       <input type="button" name="suma" value="+" class="btn">
-      <input type="button" name="borrar1" value="C" class="btn">
+      <input type="button" name="raiz" value="&#8730" class="btn masOp">
+      <input type="button" name="and" value="AND" class="btn masOp logico">
+      <input type="button" name="C" value="&#8592" class="btn">
       <input type="button" name="btn" value="4" class="btn">
       <input type="button" name="btn" value="5" class="btn">
       <input type="button" name="btn" value="6" class="btn">
       <input type="button" name="resta" value="-" class="btn">
-      <input type="button" name="borrar" value="CE" class="btn">
+      <input type="button" name="porCiento" value="%" class="btn masOp">
+      <input type="button" name="or" value="OR" class="btn masOp logico">
+      <input type="button" name="CE" value="CE" class="btn">
       <input type="button" name="btn" value="1" class="btn">
       <input type="button" name="btn" value="2" class="btn">
       <input type="button" name="btn" value="3" class="btn">
       <input type="button" name="por" value="&times" class="btn">
-      <input type="button" name="igual" value="" class="btn igual">
-      <input type="button" name="zero" value="0" class="btn zero">
+      <input type="button" name="fraccion" value="1/x" class="btn masOp">
+      <input type="button" name="not" value="NOT" class="btn masOp logico">
+      <input type="button" name="igual" value="=" class="btn igual">
+      <input type="button" name="btn" value="0" class="btn zero">
       <input type="button" name="btn" value="." class="btn">
-      <input type="button" name="divide" value="/" class="btn">
+      <input type="button" name="divi" value="/" class="btn">
+      <input type="button" name="elevado" value="x^y" class="btn masOp">
+      <input type="button" name="xor" value="XOR" class="btn masOp logico">
     </div>
   </div>
   <!-- Cargando jquery-3 y calculadora.js  -->
