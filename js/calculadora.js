@@ -123,7 +123,7 @@ $(document).ready(function(){
   // Funcion fraccion (Booton (1/x))
   $("input[name=fraccion]").click(function (){
     if ($("#display").val() != bacio){
-      // pintamos el simbolo (^) en el display y lo mostramos
+      // pintamos el simbolo (¬) en el display y lo mostramos
       var valor = $("#display").val();
       valor = valor.replace(valor, valor + "¬");
       $("#display").val(valor);
@@ -140,13 +140,13 @@ $(document).ready(function(){
     }
     if (testeo) console.log(valor1,valor2,operacion);
   });
-  // Funcion AND (Boton (AND))
+  // Funcion SIN (Boton (SIN))
 
-  // Funcion OR (Boton (OR))
+  // Funcion COS (Boton (COS))
 
-  // Funcion XOR (Boton (XOR))
+  // Funcion TAG (Boton (TAG))
 
-  // Funcion NOT (Boton (NOT))
+  // Funcion masMenos (Boton (±))
 
   // Funcion Borrar (Boton (CE))
   $("input[name=CE]").click(function () {
