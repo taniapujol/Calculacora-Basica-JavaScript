@@ -1,14 +1,14 @@
 // Empezamos nuestro jquerry externo
 $(document).ready(function(){
-  // declaracion de variables globales
+  // Testeando si Jquery esta funcionando
   var testeo = true;
   if (testeo) console.log("cargado Jquery");
-  var valor1; // es number
-  var valor2; // es number
-  var elevado;// es array
+  // declaracion de variables
+  var valor1, valor2; // es number
+  var array1, array2;// es array
   var operacion; // es string
-  var operador;
   var bacio = "";
+  if (testeo) console.log("Cargando variables -> valor1: "+valor1+","+"valor2: "+valor2+","+"operacion: "+operacion+","+"array1: "+array1+","+"array2: "+array2);
   // funcion ampliar calculadora
   $("input[name=op]").click(function () {
     var anchura = parseInt($(".calculadora").width());
@@ -28,40 +28,65 @@ $(document).ready(function(){
   $("input[name=btn]").click(function () {
     $("#display").val($("#display").val()+$(this).val());
   });
-  if (testeo) console.log(valor1,valor2,operacion);
   // Funcion suma (Boton (+))
   $("input[name=suma]").click(function (){
+  // Obtenemos el valor1 y preparamos para recibir el valor2.
     if ($("#display").val() != bacio){
-      valor1 = parseFloat($("#display").val());
-      $("#display").val(bacio);
-      operacion = "suma";
-      operador = "suma";
-      $(".op").text($(this).val());
-    } else{
+      // Miramos si tenemos previamente una fraccion que realizar
+      if (testeo) console.log("operacion: "+operacion);
+      array1 = $("#display").val().split("¬");
+      if (testeo) console.log("Testeando que la array1[1] no se encuentre bacia ->"+array1[1]);
+      if ((operacion === "fraccion") && (array1[1]!= bacio)) {
+        switch (true) {
+          case (valor1!= bacio):
+            array2 = $("#display").val().split("¬");
+            if (testeo) console.log("Testeando que la array2[1] no se encuentre bacia ->"+array2[1]);
+            array2[0] = parseFloat(array2[0]);
+            array2[1] = parseFloat(array2[0]);
+            valor2 = array2[0] / array2 [1];
+            operacion="suma";
+            if (testeo) console.log("valor1: "+valor1+", valor2: "+valor2+", operacion: "+operacion);
+            break;
+          case (valor1 = bacio):
+            array1[0] = parseFloat(array1[0]);
+            array1[1] = parseFloat(array1[0]);
+            valor1 = array1[0] / array1 [1];
+            operacion="suma";
+            $("#display").val(bacio);
+            $(".op").text($(this).val());
+            if (testeo) console.log("valor1: "+valor1+", valor2: "+valor2+", operacion: "+operacion);
+            break;
+          };
+      } else {
+        valor1 = parseFloat($("#display").val());
+        if (testeo) console.log("testeando valor1 = " + valor1);
+        $("#display").val(bacio);
+        operacion="suma";
+        $(".op").text($(this).val());
+      }
+    } else {
       alert("introduzca un valor para la operación");
     }
-    if (testeo) console.log(valor1,valor2,operacion);
   });
   // Funcion resta (Boton (-))
   $("input[name=resta]").click(function (){
+    // Obtenemos el valor1 y preparamos para recibir el valor2.
     if ($("#display").val() != bacio){
       valor1 = parseFloat($("#display").val());
       $("#display").val(bacio);
       operacion="resta";
-      operador = "resta";
       $(".op").text($(this).val());
     } else{
       alert("introduzca un valor para la operación");
     }
-    if (testeo) console.log(valor1,valor2,operacion);
   });
   // Funcion multiplicar (Boton (*))
   $("input[name=por]").click(function (){
+    // Obtenemos el valor1 y preparamos para recibir el valor2.
     if ($("#display").val() != bacio){
       valor1 = parseFloat($("#display").val());
       $("#display").val(bacio);
       operacion="por";
-      operador = "por";
       $(".op").text($(this).val());
     } else{
       alert("introduzca un valor para la operación");
@@ -70,11 +95,11 @@ $(document).ready(function(){
   });
   // Funcion dividir (Boton (/))
   $("input[name=divi]").click(function (){
+    // Obtenemos el valor1 y preparamos para recibir el valor2.
     if ($("#display").val() != bacio){
       valor1 = parseFloat($("#display").val());
       $("#display").val(bacio);
       operacion="divi";
-      operador = "divi";
       $(".op").text($(this).val());
     } else{
       alert("introduzca un valor");
@@ -83,6 +108,7 @@ $(document).ready(function(){
   });
   // Funcion raiz (Boton (raiz))
   $("input[name=raiz]").click(function(){
+    // Obtendremos el valor de la raiz siempre que no se encuentre bacio y sea mayor de 0
     if (($("#display").val() != bacio) && ($("#display").val() >= 0)){
       valor1 = parseFloat($("#display").val());
       operacion = "raiz";
@@ -127,18 +153,11 @@ $(document).ready(function(){
       var valor = $("#display").val();
       valor = valor.replace(valor, valor + "¬");
       $("#display").val(valor);
-      // operacion = "fraccion";
-      valor = $("#display").val().split("¬");
-      if (testeo) console.log(valor);
-      // elevado[0] = parseFloat(elevado[0]);
-      // elevado[1] = parseFloat(elevado[1]);
-      // if (testeo) console.log("estraidos los numeros: " + elevado[0],elevado[1]);
-      // valor = elevado[0] / elevado[1];
-      // $("#display").val(valor);
+      operacion = "fraccion";
+      if (testeo) console.warn("Este numero es parte de una funcion");
     } else{
       alert("introduzca un valor para la operación");
     }
-    if (testeo) console.log(valor1,valor2,operacion);
   });
   // Funcion SIN (Boton (SIN))
 
@@ -150,10 +169,11 @@ $(document).ready(function(){
 
   // Funcion Borrar (Boton (CE))
   $("input[name=CE]").click(function () {
+    //  Inicializamos todas las variables a bacio ("")
     $("#display").val(bacio);
-    valor1, valor2, operacion,elevado = bacio;
+    valor1, valor2, operacion, array = bacio;
     $(".op").text(bacio);
-    if (testeo) console.log(valor1,valor2,operacion,elevado);
+    if (testeo) console.log(valor1,valor2,operacion,array);
   });
   // Funcion Borrar un numero (Boton (<-))
   $("input[name=C]").click(function(){
@@ -172,82 +192,77 @@ $(document).ready(function(){
     if (testeo) console.log(valor1,valor2,operacion);
     if ($("#display").val() != bacio){
       $(".op").text($(this).val());
+      // Mientras el campo de valor1 no se encuentre bacio aplicaremos la operacion previamente especificada
       switch (valor1 != bacio) {
         case operacion == "suma" :
+          //  La operacion suma nos suma los dos numeors obtenidos
+          // if (valor2 != bacio) $("#display").val(valor1 + valor2);
           valor2 = parseFloat($("#display").val());
-          var r = valor1 + valor2;
-          $("#display").val(r);
-          if (testeo) console.log(valor1,valor2,operacion);
+          if (testeo) console.log("testeando valor1: "+valor1+" valor2: "+valor2);
+          $("#display").val(valor1 + valor2);
           break;
         case operacion == "resta" :
+          //  La operacion resta nos resta los dos numeors obtenidos
           valor2 = parseFloat($("#display").val());
           $("#display").val(valor1 - valor2);
           if (testeo) console.log(valor1,valor2,operacion);
           break;
         case operacion == "por" :
+          //  La operacion por nos hace el producto los dos numeors obtenidos
           valor2 = parseFloat($("#display").val());
           $("#display").val(valor1 * valor2);
           if (testeo) console.log(valor1,valor2,operacion);
           break;
         case operacion == "divi" :
+          //  La operacion divi nos divide los dos numeors obtenidos
           valor2 = parseFloat($("#display").val());
           $("#display").val(valor1 / valor2);
           if (testeo) console.log(valor1,valor2,operacion);
           break;
         case operacion == "raiz" :
+          // La operacion raiz hace la raiz cuadrada de numero introducido mediante la funcion match.sqrt()
           var r = Math.sqrt(valor1);
           r = (r).toFixed(4);
           $("#display").val(r);
           if (testeo) console.log(valor1,valor2,operacion);
           break;
         case operacion == "porCiento" :
-          if (valor1 !=0) {
-            valor2 = parseFloat($("#display").val());
-            valor2 = valor2 * 0.03;
-            switch (true) {
-              case operador == "suma":
-                $("#display").val(valor1 + valor2);
-                break;
-              case operador == "resta" :
-                $("#display").val(valor1 - valor2);
-                break;
-              case operador == "por" :
-                $("#display").val(valor1 * valor2);
-                break;
-              case operador == "divi" :
-                $("#display").val(valor1 / valor2);
-                break;
-              default:
-              $("#display").val(valor1 * 0.01);
-            }
-          }
-          if (testeo) console.log(valor1,valor2,operacion);
+          console.warn("Falta terminar aun esta funcion");
           break;
         case operacion == "elevado" :
-          elevado = $("#display").val().split("^");
-          elevado[0] = parseFloat(elevado[0]);
-          elevado[1] = parseFloat(elevado[1]);
-          if (testeo) console.log("estraidos los numeros"+elevado[0],elevado[1]);
-          if ( elevado[1] == 1){
-            elevado[0] = elevado[0]
-          } else if ( elevado[1]>1){
-            var num = elevado[0];
-            for (i=1; i < elevado[1] ; i++){
-              elevado[0] = elevado[0] * num;
-              if (testeo) console.log("indice"+i,"numeros " + elevado[0]);
+          // La operacion elevado realiza los siguientes pasos:
+          // Obtenemos el numero y su elevado
+          array = $("#display").val().split("^");
+          if (testeo) console.log(array);
+          array[0] = parseFloat(array[0]);
+          array[1] = parseFloat(array[1]);
+          if (testeo) console.log("estraidos los numeros" + array[0],array[1]);
+          // verificamos que si el numero = 1 su valor sera el mismo, si el numero es = 0 su valora es 0 y si es mayor que 1 lo multiplicamos tantas veces como su esponente -1 indique.
+          if ( array[1] == 1){
+            array[0] = array[0]
+          } else if ( array[1]>1){
+            var num = array[0];
+            for (i=1; i < array[1] ; i++){
+              array[0] = elevado[0] * num;
+              if (testeo) console.log("indice"+i,"numeros " + array[0]);
             };
           } else {
-            elevado[0]=0;
+            array[0]=0;
           }
-          $("#display").val(elevado[0]);
+          $("#display").val(array[0]);
           break;
         case operacion == "fraccion" :
-
-      }
+          array = $("#display").val().split("¬");
+          if (testeo) console.log(array);
+          array[0] = parseFloat(array[0]);
+          array[1] = parseFloat(array[1]);
+          var r = array[0] / array[1];
+          if (testeo) console.log("estraidos los numeros" + r);
+          $("#display").val(r);
+      };
     } else {
       alert("introduzca un valor");
     };
-    if (testeo) console.log(valor1,valor2);
   });
 
   // Fin js
